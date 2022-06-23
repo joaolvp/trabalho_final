@@ -1,0 +1,37 @@
+{% load static %}
+<section data-bs-version="5.1" class="team1 cid-t9qOSA3hud" id="team1-8">
+
+
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2">
+                    <strong>Nosso Time</strong></h3>
+
+            </div>
+            {% for f in funcionarios %}
+            <div class="col-sm-6 col-lg-4">
+                <div class="card-wrap">
+                    <div class="image-wrap">
+                        <img src="{{ f.foto.thumb.url }}" alt="Mobirise Website Builder">
+                    </div>
+                    <div class="content-wrap">
+                        <h5 class="mbr-section-title card-title mbr-fonts-style align-center m-0 display-5">
+                            <strong>{{ f.nome }}</strong>
+                        </h5>
+                        <h6 class="mbr-role mbr-fonts-style align-center mb-3 display-4">
+                            <strong>{{ f.cargo }}</strong></h6>
+                        <p class="card-text mbr-fonts-style align-center display-7">
+                        {{ f.descricao }}
+                        </p>
+
+                        <div class="mbr-section-btn card-btn align-center"><a class="btn btn-primary display-4" href="{{ f.instagram }}"><span class="socicon socicon-instagram mbr-iconfont mbr-iconfont-btn"></span>Veja o Perfil</a></div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>

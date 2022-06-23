@@ -1,0 +1,28 @@
+{% load static %}
+<section data-bs-version="5.1" class="features3 cid-t9qONPUPzj" id="features3-6">
+
+
+    <div class="container">
+        <div class="mbr-section-head">
+            <h4 class="mbr-section-title mbr-fonts-style align-center mb-5 display-2"><strong>Alguns Pets para Adoção</strong></h4>
+
+        </div>
+        <div class="row mt-4">
+            {% for p in pets %}
+            <div class="item features-image сol-12 col-md-6 col-lg-4">
+                <div class="item-wrapper">
+                    <div class="item-img">
+                        <img src="{{ p.foto.thumb.url }}" alt="Mobirise Website Builder">
+                    </div>
+                    <div class="item-content">
+                        <h5 class="item-title mbr-fonts-style display-5"><strong>{{ p.nome }}</strong></h5>
+
+                        <p class="mbr-text mbr-fonts-style mt-3 display-7">{{p.descricao|truncatewords:20}}</p>
+                    </div>
+                    <div class="mbr-section-btn item-footer mt-2"><a href="{% url 'core:detalhar_pet' p.id %}" class="btn item-btn btn-secondary display-7" target="_blank">Leia Mais&nbsp;&gt;</a></div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
